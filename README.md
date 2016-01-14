@@ -32,7 +32,7 @@ Le but final de notre api est de permettre à un site de rajouter un composant d
 
 PRODUIT
 
-| Champs | Type |
-| - | - |
-| id  | hash |
-| url | string |
+| Champs | Type   |
+| ------ | ----   |
+| id     | hash   |
+| url    | string |
