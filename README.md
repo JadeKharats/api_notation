@@ -60,3 +60,20 @@ PRODUIT
 
 On part sur ce modèle pour l'instant. On ajoutera plus tard un traitement asychrone pour le calcul des moyennes par critère.
 
+Identifions les routes et le dialogue
+-
+
+* Le client appel l'api pour remonter les notations pour l'url courante.
+* L'api renvoi le document produit correspondant.
+  * si aucun élément trouvé pour l'url produit alors le produit est créé.
+* Le client affiche à ses users les notations et un formulaire de saisie de notation.
+* Un user saisie une notation
+* Le client envoi cette notation à l'api
+* L'api l'ajoute au produit et renvoi un code retour pour success or fail
+
+on peut en déduire les urls suivantes :
+
+| Verbe  | Urls                     | Données                           | Conditions       | Retour                                           |
+| ------ | ------------------------ | ----------------------------------| ---------------- | ------------------------------------------------ |
+| POST   | /products                | url du produit                    |                  | renvoi la liste des notations ou crée le produit |
+| POST   | /products/:id/notations  | id_produit et fields notations    |                  | succes or fail                                   |
