@@ -36,3 +36,27 @@ PRODUIT
 | ------ | ----   |
 | id     | hash   |
 | url    | string |
+
+Pour un produit, on va vouloir permettre à nos utilisateurs de rajouter une note quivant une liste de critère.
+
+NOTATION
+
+| Champs              | Type     |
+| ------------------- | -------- |
+| id                  | hash     |
+| Author              | string   |
+| Criteria            | string   |
+| note                | integer  |
+
+Charge à l'application appelante de gérer ce qui identifie un Author et la liste des critères. Comme on va utiliser mongo, NOTATION sera un EmbedDocument de Produit.
+
+PRODUIT
+
+| Champs     | Type     |
+| ---------- | -------- |
+| id         | hash     |
+| url        | string   |
+| notations  | notation |
+
+On part sur ce modèle pour l'instant. On ajoutera plus tard un traitement asychrone pour le calcul des moyennes par critère.
+
